@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<BitirmeDeneme.Models.Doktor>
+
+@{
+}
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css'>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/style1.css">
+</head>
+<body>
+    <h1 class="text-center"><span>Doktorlarımız</span></h1>
+    @foreach (var item in Model)
+    {
+        <section>
+            <div class="container">
+                <div class="row">
+
+                    <!--Profile Card 3-->
+                    <div class="col-md-6">
+                        <div class="card profile-card-3">
+                            <div class="background-block">
+                                <img src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="profile-sample1" class="background" />
+                            </div>
+                            <div class="profile-thumb-block">
+                                <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="profile-image" class="profile" />
+                            </div>
+                            <div class="card-content">
+                                <h2>@item.isim<small>@item.unvan</small></h2>
+                                <div class="icon-block">
+                                    <a asp-action="Rezervasyon" class="btn btn-success">Randevu Al</a>
+                                    <a asp-action="Message" class="btn btn-danger">Soru Sor</a>
+                                    <a asp-action="About" class="btn btn-info">Mesaj At</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card profile-card-3">
+                            <div class="background-block">
+                                <img src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="profile-sample1" class="background" />
+                            </div>
+
+                            <div class="card-content">
+                                <p>Kilo koruma programı sayesinde sağlıklı beslenmeyi öğrenebilirsiniz. Almanız gereken enerjiye denk bir planın nasıl olduğunu takip edebilir ve böylece mevcut kilonuzu koruyabilirsiniz . Bununla birlikte kaybettiğiniz kiloları sabitlemek ve geri kazanımı önlemek için koruma diyeti uygulayabilirsiniz.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br><br><br><br><br><br><br><br>
+
+
+                </div>
+            </div>
+        </section>
+    }
+</body>
+</html>

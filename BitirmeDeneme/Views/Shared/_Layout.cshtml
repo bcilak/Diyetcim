@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BitirmeDeneme</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+    <style>
+        body{
+            margin :50px;
+            padding:50px;
+        }
+        background-color {
+            background-image:linear-gradient(red,yellow);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Diyetcim</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="Home" asp-action="Plan">Planlar</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Doktor1">Doktorlarımız</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Hakkımızda</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Message">Bize Ulaşın</a></li>
+                </ul>
+                
+                <ul class=" nav navbar-right" style="margin-top:10px">                    
+                    <a asp-action="Kayit" class="btn btn-warning">Kayıt Ol</a>                                        <
+                    <a asp-action="Giris" class="btn btn-warning">Giriş Yap</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <partial name="_CookieConsentPartial" />
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="container">
+                <!-- Row Starts -->
+                <div class="row section">
+                    <!-- Footer Widget Starts -->
+                    <div class="footer-widget col-lg-3 col-md-6 col-xs-12 wow fadeIn">
+                        <h3 class="small-title">
+                            About Us
+                        </h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis veritatis eius porro modi hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                        <div class="social-footer">
+                            <a href="#"><i class="fa fa-facebook icon-round"></i></a>
+                            <a href="#"><i class="fa fa-twitter icon-round"></i></a>
+                            <a href="#"><i class="fa fa-linkedin icon-round"></i></a>
+                            <a href="#"><i class="fa fa-google-plus icon-round"></i></a>
+                        </div>
+                    </div>
+                    <!-- Footer Widget Ends -->
+                    <!-- Footer Widget Starts -->
+                    <div class="footer-widget col-lg-3 col-md-6 col-xs-12 wow fadeIn" data-wow-delay=".2s">
+                        <h3 class="small-title">
+                            Links
+                        </h3>
+                        <ul class="menu">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Works</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Widget Ends -->
+                    <!-- Footer Widget Starts -->
+                    <div class="footer-widget col-lg-3 col-md-6 col-xs-12 wow fadeIn" data-wow-delay=".5s">
+                        <h3 class="small-title">
+                            GALLERY
+                        </h3>
+                        <div class="plain-flicker-gallery">
+                            <a href="#"><img src="img/flicker/img1.jpg" alt=""></a>
+                            <a href="#"><img src="img/flicker/img2.jpg" alt=""></a>
+                            <a href="#"><img src="img/flicker/img3.jpg" alt=""></a>
+                            <a href="#"><img src="img/flicker/img4.jpg" alt=""></a>
+                            <a href="#"><img src="img/flicker/img5.jpg" alt=""></a>
+                            <a href="#"><img src="img/flicker/img6.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <!-- Footer Widget Ends -->
+                    <!-- Footer Widget Starts -->
+                    <div class="footer-widget col-lg-3 col-md-6 col-xs-12 wow fadeIn" data-wow-delay=".8s">
+                        <h3 class="small-title">
+                            SUBSCRIBE US
+                        </h3>
+                        <div class="contact-us">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="exampleInputName2" placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter your email">
+                                </div>
+                                <button type="submit" class="btn btn-common">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Footer Widget Ends -->
+                </div>
+                <!-- Row Ends -->
+            </div>
+            <!-- Container Ends -->
+            <!-- Copyright -->
+            <div id="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-xs-12">
+                            <p class="copyright-text">
+                                All copyrights reserved © 2018 - Designed &amp; Developed by <a rel="nofollow" href="https://uideck.com">UIdeck</a>
+                            </p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-12">
+                            <ul class="nav nav-inline  justify-content-end ">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Sitemap</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Privacy Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Terms of services</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright  End-->
+            <p>&copy; 2022 - BitirmeDeneme</p>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
